@@ -6,11 +6,13 @@
     <title>Document</title>
 </head>
 <body>
+<div id="form">
     <h1>je account is aangemaakt ga nu door naar de inlogpagina</h1>
     <div class="nav">
     <ul class="navi">
         <li class="nav"> <a href="inlog.php" title="inlog">inlog</a></li>
     </ul>
+</div>
 </div>
 </body>
 </html>

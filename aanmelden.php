@@ -15,6 +15,7 @@
 </div>
 <h2>maak hier uw account aan</h2>
 </div>
+<div id="form">
 <form action="aanmelden.php" method="post">
 <!-- Method can be set as POST for hiding values in URL-->
 <label>naam:</label><br>
@@ -25,6 +26,7 @@
 <input class="input" name="email" type="text" value=""><br>
 <input class="submit" name="submit" type="submit" value="Insert">
 </form>
+</div>
 </div>
 </div>
 </body>

@@ -11,9 +11,11 @@ UNIQUE KEY `username` (`username`)
 
 INSERT INTO `members` (`username`, `password`) VALUES (`myuser`, `mypassword`);
 
--- CREATE TABLE `vragen`.`vragen` (
--- `naam` text(100) NOT NULL,
--- `vraag` text(100) NOT NULL
--- );
+CREATE TABLE `vragen`.`vragen` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`naam` text(100) NOT NULL,
+`vraag` text(1000) NOT NULL,
+PRIMARY KEY (`id`)
+);
 
 INSERT INTO `vragen` (`vraag`) VALUES (`myvraag`);

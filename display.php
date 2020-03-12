@@ -1,3 +1,7 @@
+<head>
+    <meta http-equiv="refresh" content="5">
+</head>
+<div id="form">
 <div class="nav">
     <ul class="navi">
         <li class="nav"> <a href="index.php" title="terug">terug</a></li>
@@ -11,6 +15,7 @@
         <th>naam</th>
         <th>vraag</th>
     </tr>
+    </div>
 <?php
  $host = '127.0.0.1';
  $db   = 'vragen';

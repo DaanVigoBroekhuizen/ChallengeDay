@@ -1,4 +1,36 @@
-<?PHP 
+<html>
+<head>
+<title>PHP insertion</title>
+<link href="css/insert.css" rel="stylesheet">
+</head>
+<body>
+<div class="maindiv">
+<!--HTML Form -->
+<div class="form_div">
+<div class="title">
+<div class="nav">
+    <ul class="navi">
+        <li class="nav"> <a href="index.php" title="terug">terug</a></li>
+    </ul>
+</div>
+<h2>log hier in</h2>
+</div>
+<div id="form">
+<form action="inlog.php" method="post">
+<!-- Method can be set as POST for hiding values in URL-->
+<label>naam:</label><br>
+<input class="input" name="username" type="text" value=""><br>
+<label>wachtwoord:</label><br>
+<input class="input" name="password" type="text" value=""><br>
+<input class="submit" name="submit" type="submit" value="Insert">
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+<?php
 
 $host = '127.0.0.1';
 $db   = 'vragen';
@@ -18,47 +50,17 @@ try {
      throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
 
-$username = $_GET['username'];
-$password = $_GET['password'];
-$con=mysqli_connect("mysql","database_user","database_password","vragen");
- if (mysqli_connect_error())
- {
-     echo "failed to connect to MySQL: " . mysqli_connect_error();
- }
+if(isset($_POST['submit'])){ // Fetching variables of the form which travels in URL
+$naam = $_POST['username'];
+$wachtwoord = $_POST['password'];
 
- $qz = "SELECT id FROM memebers where username='".$username."' and password='".$password."'";
- $qz = str_replace("\'", "",$qz);
- $result = mysqli_query($con,$qz);
- while($row = mysqli_fetch_array($result))
- {
-     echo $row['id'];
- }
- mysqli_close($con);
+if ($naam == 'admin' && $wachtwoord == 'admin'){
+    header('location: display.php');
+} elseif ($naam == ''|| $wachtwoord == '') {
+    echo "<p>Insertion Failed <br/> Some Fields are Blank....!!</p>";
+} else {
+    header('location: submit.php');
+}
+}
 
 ?>
-
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<div class="nav">
-    <ul class="navi">
-        <li class="nav"> <a href="index.php" title="terug">terug</a></li>
-        <li class="nav"> <a href="aanmelden.php" title="naar het aanmeld scherm">aanmelden</a></li>
-    </ul>
-</div>
-
-<h1>welkom bij de inlog pagina</h1>
-    
-<form action="index.php" method="GET" name="form">
-    <input type="text" name="username">
-    <input type="text" name="password">
-    <input type="submit" name="submit">
-</form>
-
-</body>
-</html>
