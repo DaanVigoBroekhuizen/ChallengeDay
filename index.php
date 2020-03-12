@@ -37,6 +37,8 @@ try {
     <ul class="navi">
         <li class="nav"> <a href="inlog.php" title="naar het inlog scherm">inlog</a></li>
         <li class="nav"> <a href="aanmelden.php" title="naar het aanmeld scherm">aanmelden</a></li>
+        <li class="nav"> <a href="submit.php" title="naar het submit scherm">submit</a></li>
+        <li class="nav"> <a href="display.php" title="naar de display scherm">display</a></li>
     </ul>
 </div>
     

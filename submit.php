@@ -13,16 +13,15 @@
         <li class="nav"> <a href="index.php" title="terug">terug</a></li>
     </ul>
 </div>
-<h2>maak hier uw account aan</h2>
+<h2>Insert Data In Database Using PHP.</h2>
 </div>
-<form action="aanmelden.php" method="post">
+<form action="submit.php" method="post">
 <!-- Method can be set as POST for hiding values in URL-->
-<label>naam:</label><br>
-<input class="input" name="username" type="text" value=""><br>
-<label>wachtwoord:</label><br>
-<input class="input" name="password" type="text" value=""><br>
-<label>Email:</label><br>
-<input class="input" name="email" type="text" value=""><br>
+<h2>Form</h2>
+<label>Naam:</label><br>
+<input class="input" name="naam" type="text" value=""><br>
+<label>Vraag:</label><br>
+<input class="input" name="vraag" type="text" value=""><br>
 <input class="submit" name="submit" type="submit" value="Insert">
 </form>
 </div>
@@ -51,12 +50,11 @@ try {
 }
 
 if(isset($_POST['submit'])){ // Fetching variables of the form which travels in URL
-$naam = $_POST['username'];
-$wachtwoord = $_POST['password'];
-$email = $_POST['email'];
+$naam = $_POST['naam'];
+$vraag = $_POST['vraag'];
 
 if ($naam != '' || $vraag != ''){
-    $query = $pdo->query("insert into members(username, password, email) values ('$naam', '$wachtwoord', '$email')");
+    $query = $pdo->query("insert into vragen(naam, vraag) values ('$naam', '$vraag')");
 } else {
     echo "<p>Insertion Failed <br/> Some Fields are Blank....!!</p>";
 }
