@@ -1,5 +1,6 @@
 <head>
     <meta http-equiv="refresh" content="5">
+    <link rel="stylesheet" type="text/css" href="Style.css">
 </head>
 <div id="form">
 <div class="nav">

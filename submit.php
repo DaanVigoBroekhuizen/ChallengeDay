@@ -2,6 +2,7 @@
 <head>
 <title>PHP insertion</title>
 <link href="css/insert.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="Style.css">
 </head>
 <body>
 <div class="maindiv">
